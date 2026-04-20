@@ -10,4 +10,4 @@ Please do the same with the DRF documentation to execute the DRF interpolation:
 
 [https://github.com/totony4real/DeepRandomFeatures](https://github.com/totony4real/DeepRandomFeatures)
 
-And use the file `drf_ex_github.ipynb` with `config_demo8.yaml`.
+And use the file `drf_ex_github.ipynb` with `config_demo8.yaml`. Please note that to execute this, DRF requires that training data must be pickled before being passed to its algorithms. In this case please pickle a csv in the example's form to achieve this, while leaving test data as a raw csv.

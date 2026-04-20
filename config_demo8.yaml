@@ -1,0 +1,39 @@
+data:
+  obs_data_dir: '/home/mhen/data/cs2s3/per_track/jan20/drf/sat_sep/'
+  obs_data_name: 'interp_pt_train_track' #stop name before track number
+  test_data_name: 'interp_pt_test_track'
+  obs_data_ext: '.pkl' #string of file extension
+  test_data_ext: '.csv'
+device: 'cuda'
+model:
+  name: 'DeepSpatiotemporalGPNN' 
+  num_layers: 4
+  hidden_dim: 1000
+  bottleneck_dim: 128
+  output_dim: 1
+  spatial_layer_type: 'Matern'  # Options: 'Matern', 'SquaredExponential', etc.....
+  temporal_layer_type: 'Matern'
+  kwargs: {}  # Additional arguments for the model if needed...
+bayesian_optimization:
+  n_iterations: 20
+  initial_samples: 20
+  bounds:
+    - [0.1, 10]  # spatial_lengthscale
+    - [0.1, 10]  # temporal_lengthscale
+    - [0.1, 1]   # amplitude
+  optimize_observation_noise: True  # Flag to enable/disable observation noise optimization
+  observation_noise_bounds: [0.01, 0.49]
+  penalty_weight: 0.75
+uq_method:
+  type: 'deep_ensemble'  # Options: 'deep_ensemble', 'mc_dropout'.....
+training:
+  num_epochs: 1
+  batch_size: 1024
+  learning_rate: 0.001
+  num_models: 10
+results:
+  results_dir: '/home/mhen/DeepRandomFeatures/notebooks/per_track_demo/results/part8/'
+  csv_filename: 'results.csv'
+  predictions_filename: 'final_predictions.pt'
+  variance_filename: 'final_variance.pt'
+  individual_predictions_filename: 'individual_final_predictions.pt'

@@ -4,6 +4,10 @@ To execute the GPSat interpolation, please install GPSat and configure the neces
 
 [https://github.com/CPOMUCL/GPSat](https://github.com/CPOMUCL/GPSat)
 
+You will then be able to call the functions found in `gpsat_ex_github.ipynb`.
+
 Please do the same with the DRF documentation to execute the DRF interpolation:
 
-[https://github.com/totony4real/DeepRandomFeatures](https://github.com/totony4real/DeepRandomFeatures).
+[https://github.com/totony4real/DeepRandomFeatures](https://github.com/totony4real/DeepRandomFeatures)
+
+And use the file `drf_ex_github.ipynb` with `config_demo8.yaml`.

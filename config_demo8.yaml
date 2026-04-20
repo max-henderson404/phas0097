@@ -1,5 +1,5 @@
 data:
-  obs_data_dir: '/home/mhen/data/cs2s3/per_track/jan20/drf/sat_sep/'
+  obs_data_dir: '/path/to/datadir/' #this should contain the training dataset, pickled, in the same format as the example csv
   obs_data_name: 'interp_pt_train_track' #stop name before track number
   test_data_name: 'interp_pt_test_track'
   obs_data_ext: '.pkl' #string of file extension
@@ -32,7 +32,7 @@ training:
   learning_rate: 0.001
   num_models: 10
 results:
-  results_dir: '/home/mhen/DeepRandomFeatures/notebooks/per_track_demo/results/part8/'
+  results_dir: '/path/to/results/'
   csv_filename: 'results.csv'
   predictions_filename: 'final_predictions.pt'
   variance_filename: 'final_variance.pt'
